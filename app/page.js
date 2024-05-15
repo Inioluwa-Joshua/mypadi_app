@@ -146,16 +146,25 @@ const Home = () => {
   };
 
   return (
-    <div className="text-tecxe-whit" id="top">
+    <div className="text-tecxe-white" id="top">
       <Navbar section={"GPA Calculator"} />
 
       <div className="text-[white] ">
         {/* <h1>Welcome, {user ? user.displayName : "Guest"}</h1> */}
 
         <div className="md:w-[60%] w-[90%] mx-auto">
+          <p className="p-5 text-[.7rem] text-[white] text-left lg:hidden">
+            Want To Calculate Your CGPA?{" "}
+            <a
+              href="/cgpa"
+              className="text-[white] bg-[#0080008f] rounded-[5px] px-2 py-1 text-[.9rem] underline hover:bg-[#37c125] font-[500]"
+            >
+              Calculate CGPA
+            </a>
+          </p>
           <div class="relative overflow-x-auto shadow-md">
             <table class="w-full text-sm text-left ">
-              <caption class="p-5 text-[1.4rem] font-semibold text-left">
+              <caption class="px-5 lg:py-5 text-[1.4rem] font-semibold text-left">
                 Predict Your GPA
                 <p class="mt-2 text-sm md:text-[1rem] font-normal text-[#ffffffbe] text-justify">
                   Explore the power of our GPA prediction tool to stay ahead in

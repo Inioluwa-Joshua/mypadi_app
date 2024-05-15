@@ -94,19 +94,29 @@ const Navbar = ({ section }) => {
 
         {/* menu  */}
         <div className="flex">
-          <div className="hidden text-center lg:flex lg:items-center bg-[rgba(255,255,255,0.06)] rounded-[10px]">
-            <ul className="items-center gap-4 justify-end flex-1 px-6 list-none lg:pt-0 lg:flex">
-              {navigation.map((menu, index) => (
-                <li className="nav__item" key={index}>
-                  <Link
-                    href={menu.link}
-                    className="inline-block  py-3 text-[.9rem] font-normal text-tecxe-white no-underline rounded-md hover:text-indigo-500 focus:text-indigo-500 focus:bg-indigo-100 focus:outline-none"
-                  >
-                    {menu.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          <div className="flex items-center gap-3">
+            <div>
+              <a
+                href="/cgpa"
+                className="text-[white] bg-[green] rounded-[10px] px-5 py-3 text-[.9rem] font-[500] hidden lg:inline"
+              >
+                Calculate CGPA
+              </a>
+            </div>
+            <div className="hidden text-center lg:flex lg:items-center bg-[rgba(255,255,255,0.06)] rounded-[10px]">
+              <ul className="items-center gap-4 justify-end flex-1 px-6 list-none lg:pt-0 lg:flex">
+                {navigation.map((menu, index) => (
+                  <li className="nav__item" key={index}>
+                    <Link
+                      href={menu.link}
+                      className="inline-block py-3 text-[.9rem] font-normal text-tecxe-white no-underline rounded-md hover:text-[#84f684]"
+                    >
+                      {menu.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* <div className="hidden ml-9 space-x-4 lg:flex nav__item">

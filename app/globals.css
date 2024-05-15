@@ -6,5 +6,6 @@
   html,
   body {
     @apply bg-[#0a0f0f];
+    scroll-behavior: smooth;
   }
 }
