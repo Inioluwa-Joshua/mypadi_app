@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/navbar";
+import Modal from "@/components/Modal";
 
 const subjectsData = [
   { code: "Math 101", name: "Mathematics" },
@@ -10,6 +11,7 @@ const subjectsData = [
 ];
 
 const Home = () => {
+  const [open, setOpen] = useState(false);
   const [user, setUser] = useState(null);
   const router = useRouter();
   useEffect(() => {
@@ -144,7 +146,7 @@ const Home = () => {
   };
 
   return (
-    <div className="text-tecxe-whit">
+    <div className="text-tecxe-whit" id="top">
       <Navbar section={"GPA Calculator"} />
 
       <div className="text-[white] ">
@@ -153,15 +155,16 @@ const Home = () => {
         <div className="md:w-[60%] w-[90%] mx-auto">
           <div class="relative overflow-x-auto shadow-md">
             <table class="w-full text-sm text-left ">
-              <caption class="p-5 text-lg font-semibold text-left">
-                GPA Calculator
-                <p class="mt-1 text-sm md:text-[1rem] font-normal text-[#aaaaaa]">
-                  Calculate your Grade Point Average with ease using our
-                  user-friendly GPA calculator. Whether {"you're"} a student or an
-                  educator, our tool helps you stay on top of your academic
-                  performance. Input your subjects, units, and grades to get
-                  instant GPA results. Start calculating now and track your
-                  progress effortlessly.
+              <caption class="p-5 text-[1.4rem] font-semibold text-left">
+                Predict Your GPA
+                <p class="mt-2 text-sm md:text-[1rem] font-normal text-[#ffffffbe] text-justify">
+                  Explore the power of our GPA prediction tool to stay ahead in
+                  your academic journey. Whether {"you're"} a student planning
+                  your next semester or an educator guiding your students, our
+                  intuitive calculator simplifies the process. Input your
+                  subjects, units, and anticipated grades to forecast your GPA
+                  instantly. Begin predicting your GPA today and make informed
+                  decisions about your academic goals.
                 </p>
               </caption>
               <thead class="text-xs text-gray-700 uppercase bg-[gray]">
@@ -266,6 +269,167 @@ const Home = () => {
             </div>
           )}
         </div>
+      </div>
+
+      <div className="text-[white] py-12  xl:px-14">
+        <div className="md:container w-[90%] mx-auto px-4">
+          <div className="md:w-[70%]">
+            <div className="">
+              <h2 className="text-[1.3rem] font-[500]">How It Works</h2>
+              <p className="text-[#ffffffd2]">
+                Our GPA calculator simplifies the process of determining your
+                Grade Point Average (GPA) by providing a straightforward and
+                efficient tool. Follow these simple steps to calculate your GPA:
+              </p>
+            </div>
+            <div className="mt-5 grid grid-cols-1 md:gap-3">
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">1</span> - Input Your Courses
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  Begin by entering the names of your courses or subjects into
+                  the designated fields. You can add as many courses as you
+                  need.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">2</span> - Enter Your Grades
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  For each course, select the grade you received from the
+                  dropdown menu. Grades range from A (excellent) to F (fail).
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">3</span> - Provide Credit Units
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  Assign credit units or hours to each course based on its
+                  weight or workload. These units represent the value or weight
+                  of each course.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">4</span> - Calculate Your GPA
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  Once {"you've"} entered all your courses, grades, and credit
+                  units, click the {'"Calculate GPA"'} button. Our calculator
+                  will instantly compute your GPA based on the information
+                  provided.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">5</span> - View Your GPA
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  Your GPA results will be displayed on the screen, providing
+                  you with an accurate assessment of your academic performance.
+                </p>
+              </div>
+              <div className="flex flex-col">
+                <h3 className="mt-4 text-lg font-medium text-gray-900">
+                  <span className="">6</span> - Sreenshot Result
+                </h3>
+                <p className="mt-2 text-base text-[#ffffffd2]">
+                  If desired, you can screenshot your GPA results for future
+                  reference or academic planning.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="community"
+        class="flex items-center w-full justify-center relative bg-[#ffffff1a]"
+      >
+        <div class="mb-8 text-center w-[90%] md:w-[70%] pt-[4rem]">
+          <h1 class="text-[1.5rem] font-[600] leading-snug tracking-tight lg:text-[2rem] lg:leading-tight text-tecxe-white capitalize">
+            Join a Community on campus
+          </h1>
+          <div class="w-[78%] md:w-[70%] mx-auto">
+            <p class="font-[400] py-5 text-[1rem] leading-normal text-tecxe-white lg:text-[1.2rem]  dark:text-gray-300">
+              Discover campus communities aligned with your interests.
+            </p>
+          </div>
+          <div class="flex justify-center  flex-col md:flex-row gap-3">
+            <button
+              onClick={() => setOpen(true)}
+              class="px-6 py-3 mt-3 text-center font-[500] text-[.9rem] md:text-[1.2rem] text-tecxe-white bg-[#30843d] rounded-[100px] lg:ml-5 capitalize"
+            >
+              Find Community
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <footer class="text-[white] rounded-lg shadow m-4">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+          <span class="text-sm sm:text-center ">
+            © 2024{" "}
+            <a href="https://flowbite.com/" class="hover:underline">
+              MyPadi Schools
+            </a>
+            . All Rights Reserved.
+          </span>
+          <ul class="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
+            {/* <li>
+              <a href="#" class="hover:underline me-4 md:me-6">
+                About
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">
+                Privacy Policy
+              </a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline me-4 md:me-6">
+                Licensing
+              </a>
+            </li> */}
+            <li>
+              <a href="#top" class="hover:underline">
+                Back To Top
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+      <div className="">
+        <Modal open={open} onClose={() => setOpen(false)}>
+          <div className="  w-[19rem] md:w-[22rem]">
+            {/* <DeleteIcon size={56} className="mx-auto text-red-500" /> */}
+            <div className=" my-4 w-50">
+              <h3 className="text-[1.5rem] font-[600] my-2">Communities</h3>
+              <p className="text-[1rem] text-gray-500 text-center border border-[#544a4a] p-2">
+                No available community to join
+              </p>
+            </div>
+            <p className="text-[1.3rem] font-[500] text-center">
+              To promote your community contact us.
+            </p>
+            <div className="flex gap-4">
+              <button
+                onClick={() => setOpen(false)}
+                type="button"
+                class="font-[700] border focus:outline-none text-white bg-purple-700 hover:bg-[#bc1717] hover:text-tecxe-white hover:border-none text-sm px-5 py-2.5"
+              >
+                Cancel
+              </button>
+              <button className="bg-social-green text-tecxe-white font-[700] btn btn-light w-full hover:bg-[green]">
+                Contact Us
+              </button>
+            </div>
+          </div>
+        </Modal>
       </div>
     </div>
   );
