@@ -6,7 +6,7 @@ import { clientUrl } from "@/urls";
 const Navbar = ({ section }) => {
   const navigation = [
     { title: "Products", link: "" },
-    { title: "Community", link: `${clientUrl}/#community` },
+    { title: "Community", link: `/#community` },
   ];
   // "Pricing",
   return (
@@ -79,12 +79,12 @@ const Navbar = ({ section }) => {
                         {item.title}
                       </Link>
                     ))}
-                    {/* <Link
-                      href="/"
-                      className="w-full px-6 py-2 mt-3 text-center text-[white] bg-indigo-600 rounded-md lg:ml-5"
+                    <Link
+                      href="/cgpa"
+                      className="w-full px-6 py-2 mt-3 text-center text-[white] bg-[green] rounded-[10px] bg-indigo-600 lg:ml-5"
                     >
-                      Get Started
-                    </Link> */}
+                       Calculate CGPA
+                    </Link>
                   </>
                 </Disclosure.Panel>
               </div>

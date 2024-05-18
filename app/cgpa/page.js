@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/navbar";
 import Modal from "@/components/Modal";
+import BannerAd from "@/components/ads/BannerAd";
 
 const Index = () => {
   const [open, setOpen] = useState(false);
@@ -61,6 +62,9 @@ const Index = () => {
 
   return (
     <div className="text-tecxe-whit" id="top">
+      <div>
+        <BannerAd />
+      </div>
       <Navbar section={"CGPA Calculator"} />
 
       <div className="text-[white] ">
@@ -72,9 +76,9 @@ const Index = () => {
               <caption className="p-5 text-[1.4rem] font-semibold text-left">
                 Calculate Your CGPA
                 <p className="mt-2 text-sm md:text-[1rem] font-normal text-[#ffffffbe] text-justify">
-                  {"Here's"} how it works: Enter your grades and credits for
-                  each semester. Your CGPA is calculated automatically, helping
-                  you track your progress seamlessly.
+                  {"Here's"} how it works: Enter your total grade point and
+                  total credit unit for each semester. Your CGPA is calculated
+                  automatically, helping you track your progress seamlessly.
                 </p>
               </caption>
             </table>
@@ -91,7 +95,7 @@ const Index = () => {
                         <p className="">Total Grade Point</p>
                         <input
                           type="number"
-                          placeholder="E.g 4.50"
+                          placeholder="E.g 85"
                           value={semester.totalGrade}
                           onChange={(e) => {
                             const newSemesters = [...semesters];
@@ -252,7 +256,12 @@ const Index = () => {
                   your achievements along the way to stay motivated.
                 </p>
               </div>
-              <p className="mt-4 text-[1rem] font-[500]">Remember, improving your CGPA is a gradual process, and it requires consistent effort and dedication. Be patient with yourself and focus on continuous improvement rather than perfection.</p>
+              <p className="mt-4 text-[1rem] font-[500]">
+                Remember, improving your CGPA is a gradual process, and it
+                requires consistent effort and dedication. Be patient with
+                yourself and focus on continuous improvement rather than
+                perfection.
+              </p>
             </div>
           </div>
         </div>
@@ -317,7 +326,7 @@ const Index = () => {
       </footer>
       <div className="">
         <Modal open={open} onClose={() => setOpen(false)}>
-          <div className="  w-[19rem] md:w-[22rem]">
+          <div className=" w-[19rem] md:w-[22rem]">
             {/* <DeleteIcon size={56} className="mx-auto text-red-500" /> */}
             <div className=" my-4 w-50">
               <h3 className="text-[1.5rem] font-[600] my-2">Communities</h3>
@@ -332,13 +341,17 @@ const Index = () => {
               <button
                 onClick={() => setOpen(false)}
                 type="button"
-                class="font-[700] border focus:outline-none text-white bg-purple-700 hover:bg-[#bc1717] hover:text-tecxe-white hover:border-none text-sm px-5 py-2.5"
+                class="font-[700] border focus:outline-none hover:bg-[#bc1717] hover:text-tecxe-white hover:border-none text-sm px-5 py-2.5"
               >
                 Cancel
               </button>
-              <button className="bg-social-green text-tecxe-white font-[700] btn btn-light w-full hover:bg-[green]">
+              <a
+                href="https://wa.link/s9lw2t"
+                target="blank"
+                className="bg-social-green text-tecxe-white font-[700] w-full hover:bg-[green] flex justify-center items-center p-0"
+              >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
         </Modal>

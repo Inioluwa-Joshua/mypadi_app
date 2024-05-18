@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/layout/navbar";
 import Modal from "@/components/Modal";
+import BannerAd from "@/components/ads/BannerAd";
 
 const subjectsData = [
   { code: "Math 101", name: "Mathematics" },
@@ -146,27 +147,32 @@ const Home = () => {
   };
 
   return (
-    <div className="text-tecxe-white" id="top">
+    <div className="" id="top">
+      <div>
+        <BannerAd />
+      </div>
       <Navbar section={"GPA Calculator"} />
 
       <div className="text-[white] ">
         {/* <h1>Welcome, {user ? user.displayName : "Guest"}</h1> */}
 
         <div className="md:w-[60%] w-[90%] mx-auto">
-          <p className="p-5 text-[.7rem] text-[white] text-left lg:hidden">
-            Want To Calculate Your CGPA?{" "}
+          <div className="px-5 pb-3 flex justify-center items-center gap-1 flex-wrap lg:hidden">
+            <p className=" text-[.7rem] text-[white] text-left">
+              Want To Calculate Your CGPA?
+            </p>
             <a
               href="/cgpa"
-              className="text-[white] bg-[#0080008f] rounded-[5px] px-2 py-1 text-[.9rem] underline hover:bg-[#37c125] font-[500]"
+              className="text-[white] bg-[#0080008f] rounded-[5px] px-2 py-1 text-[.8rem] underline hover:bg-[#37c125] font-[500]"
             >
               Calculate CGPA
             </a>
-          </p>
+          </div>
           <div class="relative overflow-x-auto shadow-md">
             <table class="w-full text-sm text-left ">
               <caption class="px-5 lg:py-5 text-[1.4rem] font-semibold text-left">
                 Predict Your GPA
-                <p class="mt-2 text-sm md:text-[1rem] font-normal text-[#ffffffbe] text-justify">
+                <p class="mt-2 mb-3 text-sm md:text-[1rem] font-normal text-[#ffffffbe] text-justify">
                   Explore the power of our GPA prediction tool to stay ahead in
                   your academic journey. Whether {"you're"} a student planning
                   your next semester or an educator guiding your students, our
@@ -176,7 +182,7 @@ const Home = () => {
                   decisions about your academic goals.
                 </p>
               </caption>
-              <thead class="text-xs text-gray-700 uppercase bg-[gray]">
+              <thead class="text-xs text-gray-700 uppercase bg-[gray] ">
                 <tr>
                   <th scope="col" class=""></th>
                   <th scope="col" class="px-2 py-3">
@@ -433,9 +439,13 @@ const Home = () => {
               >
                 Cancel
               </button>
-              <button className="bg-social-green text-tecxe-white font-[700] btn btn-light w-full hover:bg-[green]">
+              <a
+                href="https://wa.link/s9lw2t"
+                target="blank"
+                className="bg-social-green text-tecxe-white font-[700] w-full hover:bg-[green] flex justify-center items-center p-0"
+              >
                 Contact Us
-              </button>
+              </a>
             </div>
           </div>
         </Modal>
