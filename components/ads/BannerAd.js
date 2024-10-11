@@ -9,8 +9,8 @@ const BannerAd = () => {
   const atOptions = {
     key: "1ab5c4f164773b05eae06cc4768d341b",
     format: "iframe",
-    height: 50,
-    width: 320,
+    height: 500,
+    width: 500,
     params: {},
   };
 

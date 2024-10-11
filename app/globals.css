@@ -5,7 +5,7 @@
 @layer base {
   html,
   body {
-    @apply bg-[#0a0f0f];
+    @apply bg-[#1a1313];
     scroll-behavior: smooth;
   }
 }

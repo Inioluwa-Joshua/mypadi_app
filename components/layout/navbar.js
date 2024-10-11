@@ -1,7 +1,8 @@
 import Link from "next/link";
-import Image from "next/image";
+// import Image from "public/pix/logo.png";
 import { Disclosure } from "@headlessui/react";
 import { clientUrl } from "@/urls";
+// import { Cog8ToothIcon } from "@heroicons/20/solid";
 
 const Navbar = ({ section }) => {
   const navigation = [
@@ -16,7 +17,7 @@ const Navbar = ({ section }) => {
         <Disclosure>
           {({ open }) => (
             <>
-              <div className="flex flex-wrap items-center justify-between w-full lg:w-auto">
+              <div className="flex flex-wrap items-center justify-around w-full lg:w-auto">
                 <Link href="/">
                   <span className="flex items-center space-x-2 md:text-2xl font-medium text-indigo-500 dark:text-gray-100 text-tecxe-white">
                     <span>
@@ -29,17 +30,40 @@ const Navbar = ({ section }) => {
                       /> */}
                     </span>
                     <span>
-                      {/* <Image
-                        src="/img/tecxe/logo.svg"
+                      {/* <img
+                        src="/images/pix/logo.png"
                         alt="N"
                         width="300"
-                        height="700"
+                        height="300"
                         className=""
                       /> */}
-                      MyPadi {section ? "-" : ""} {section}
+                       Cluxai AI{section ? "-" : ""} {section}
                     </span>
                   </span>
                 </Link>
+                <div className="flex">
+          <div className="flex items-center gap-3 ml-4">
+            <div>
+              <a
+                href="/cgpa"
+                className="text-[white] bg-[#710d0b] rounded-[10px] px-5 py-3 text-[.9rem] font-[500] hidden lg:inline"
+              >
+                GPA / CGPA Calculator
+              </a>
+            </div>
+            {/*  */}
+          </div>
+
+          {/* <div className="hidden ml-9 space-x-4 lg:flex nav__item">
+            <Link
+              href="/"
+              className="px-6 py-2 flex items-center text-tecxe-white bg-social-green rounded-md md:ml-2 "
+            >
+              Generate Tags
+            </Link>
+          </div> */}
+                </div>
+                
 
                 <Disclosure.Button
                   aria-label="Toggle Menu"
@@ -93,40 +117,8 @@ const Navbar = ({ section }) => {
         </Disclosure>
 
         {/* menu  */}
-        <div className="flex">
-          <div className="flex items-center gap-3">
-            <div>
-              <a
-                href="/cgpa"
-                className="text-[white] bg-[green] rounded-[10px] px-5 py-3 text-[.9rem] font-[500] hidden lg:inline"
-              >
-                Calculate CGPA
-              </a>
-            </div>
-            <div className="hidden text-center lg:flex lg:items-center bg-[rgba(255,255,255,0.06)] rounded-[10px]">
-              <ul className="items-center gap-4 justify-end flex-1 px-6 list-none lg:pt-0 lg:flex">
-                {navigation.map((menu, index) => (
-                  <li className="nav__item" key={index}>
-                    <Link
-                      href={menu.link}
-                      className="inline-block py-3 text-[.9rem] font-normal text-tecxe-white no-underline rounded-md hover:text-[#84f684]"
-                    >
-                      {menu.title}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-
-          {/* <div className="hidden ml-9 space-x-4 lg:flex nav__item">
-            <Link
-              href="/"
-              className="px-6 py-2 flex items-center text-tecxe-white bg-social-green rounded-md md:ml-2 "
-            >
-              Generate Tags
-            </Link>
-          </div> */}
+        <div className="">
+         {/* <Cog8ToothIcon class="h-6 w-6 text-gray-500" /> */}
         </div>
       </nav>
     </div>

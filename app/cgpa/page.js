@@ -137,9 +137,9 @@ const Index = () => {
       </div>
 
       <div className="text-[white] py-12  xl:px-14">
-        <div className="md:container w-[90%] mx-auto px-4">
+        <div className="md:container w-[90%] mx-auto px-4 flex justify-center items-center">
           <div className="md:w-[70%]">
-            <div className="">
+            <div className="text-center">
               <h2 className="text-[1.3rem] font-[500]">What is CGPA?</h2>
               <p className="text-[#ffffffd2]">
                 CGPA stands for Cumulative Grade Point Average. {"It's"} a
@@ -152,12 +152,13 @@ const Index = () => {
                 value.
               </p>
             </div>
-            <div className="flex flex-col mt-7">
+            <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-3">
               <h2 className="text-[1.3rem] font-[500]">
                 How To Improve Your CGPA
               </h2>
-              <div className="mt-2 grid grid-cols-1 md:gap-3">
-                <h3 className=" text-lg font-medium text-gray-900">
+              <div className="mt-2 grid grid-cols-1 md:gap-3 bg-gradient-to-r from-[#2e1010] via-[#1a1313] to-[#F30600] rounded-lg p-4 
+              shadow-md w-500">
+                <h3 className=" text-lg font-medium  text-gray-900">
                   <span className="">1</span> - Stay Organized
                 </h3>
                 <p className="mt-2 text-base text-[#ffffffd2]">
